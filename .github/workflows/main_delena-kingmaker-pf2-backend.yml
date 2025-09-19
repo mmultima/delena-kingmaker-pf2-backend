@@ -30,9 +30,8 @@ jobs:
 # Copied from Vialeea
       - name: Build with Gradle
         run: |
-          ls
           chmod +x gradlew
-          ./gradlew build test bootwar
+          ./gradlew build test bootJar
           cp build/libs/ROOT.war build/libs/app.jar
 
       - name: Upload artifact for deployment job
