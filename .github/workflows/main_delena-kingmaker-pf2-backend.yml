@@ -30,7 +30,7 @@ jobs:
 # Copied from Vialeea
       - name: Build with Gradle
         run: |
-          cd Application
+          ls
           chmod +x gradlew
           ./gradlew build test bootwar
           cp build/libs/ROOT.war build/libs/app.jar
