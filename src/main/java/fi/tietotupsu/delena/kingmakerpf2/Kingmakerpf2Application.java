@@ -19,7 +19,7 @@ public class Kingmakerpf2Application {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("http://localhost", "https://delena-kingmaker-pf2.azurewebsites.net")
+						.allowedOrigins("http://localhost:3000", "https://delena-kingmaker-pf2.azurewebsites.net")
 						.allowedMethods("*")
 						.allowedHeaders("*")
 						.allowCredentials(true);
