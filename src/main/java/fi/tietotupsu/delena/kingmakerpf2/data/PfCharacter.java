@@ -67,6 +67,24 @@ public class PfCharacter {
     }
 
     private String user;
+
+    private boolean kingmaker;
+
+    private boolean npc;
+    public boolean isNpc() {
+        return npc;
+    }
+
+    public void setNpc(boolean npc) {
+        this.npc = npc;
+    }
+    public boolean isKingmaker() {
+        return kingmaker;
+    }
+
+    public void setKingmaker(boolean kingmaker) {
+        this.kingmaker = kingmaker;
+    }
     
     public PfCharacter(String id, String name) {
         super();
