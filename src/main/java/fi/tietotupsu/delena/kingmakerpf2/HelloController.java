@@ -1,6 +1,9 @@
 
+
 package fi.tietotupsu.delena.kingmakerpf2;
 
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.List;
 
+import fi.tietotupsu.delena.kingmakerpf2.data.NpcRelationship;
 import fi.tietotupsu.delena.kingmakerpf2.data.PfCharacter;
 import fi.tietotupsu.delena.kingmakerpf2.repositories.PfCharacterRepository;
 
@@ -66,6 +70,26 @@ public class HelloController {
     
     @PostMapping("/character")
     public PfCharacter createCharacter(@RequestBody PfCharacter character) {
+        // character.setNpcRelationships(new ArrayList<>());
+        // NpcRelationship npcRel = new NpcRelationship();
+        // npcRel.setNpcId("68d869f2671bec4012be26dc");
+        // npcRel.setBonus(1);
+        // npcRel.setDescription("A new relationship");
+        // character.getNpcRelationships().add(npcRel);
+
         return pfCharacterRepository.save(character);
+    }
+
+    @PutMapping("/character/{id}")
+    public PfCharacter updateCharacter(@PathVariable String id, @RequestBody PfCharacter updatedCharacter) {
+        return pfCharacterRepository.findById(id)
+            .map(character -> {
+                character.setName(updatedCharacter.getName());
+                character.setNpcRelationships(updatedCharacter.getNpcRelationships());
+                character.setImage(updatedCharacter.getImage());
+                // Set other fields as needed
+                return pfCharacterRepository.save(character);
+            })
+            .orElse(null);
     }
 }

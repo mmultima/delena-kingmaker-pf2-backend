@@ -2,6 +2,7 @@ package fi.tietotupsu.delena.kingmakerpf2.data;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.List;
 
 @Document("pfcharacters")
 public class PfCharacter {
@@ -71,6 +72,15 @@ public class PfCharacter {
     private boolean kingmaker;
 
     private boolean npc;
+
+    private List<NpcRelationship> npcRelationships;
+    public List<NpcRelationship> getNpcRelationships() {
+        return npcRelationships;
+    }
+
+    public void setNpcRelationships(List<NpcRelationship> npcRelationships) {
+        this.npcRelationships = npcRelationships;
+    }
     public boolean isNpc() {
         return npc;
     }
@@ -124,4 +134,6 @@ public class PfCharacter {
     public void setCastingIdString(String castingIdString) {
         this.castingIdString = castingIdString;
     }
+
+
 }
