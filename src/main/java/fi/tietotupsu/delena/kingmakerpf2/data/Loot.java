@@ -6,6 +6,10 @@ public class Loot {
     private String description;
     private int value;
 
+    // New fields
+    private String characterId; // ID of the character who has the loot
+    private boolean sold;       // Toggle for sold
+
     // Getters and setters
     public String getId() {
         return id;
@@ -37,5 +41,22 @@ public class Loot {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    // New getters and setters
+    public String getCharacterId() {
+        return characterId;
+    }
+
+    public void setCharacterId(String characterId) {
+        this.characterId = characterId;
+    }
+
+    public boolean isSold() {
+        return sold;
+    }
+
+    public void setSold(boolean sold) {
+        this.sold = sold;
     }
 }

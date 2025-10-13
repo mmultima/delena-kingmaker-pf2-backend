@@ -1,5 +1,3 @@
-
-
 package fi.tietotupsu.delena.kingmakerpf2;
 
 import org.springframework.web.bind.annotation.PutMapping;
@@ -87,6 +85,8 @@ public class HelloController {
                 character.setName(updatedCharacter.getName());
                 character.setNpcRelationships(updatedCharacter.getNpcRelationships());
                 character.setImage(updatedCharacter.getImage());
+                character.setDead(updatedCharacter.isDead());
+                character.setNpc(updatedCharacter.isNpc());
                 // Set other fields as needed
                 return pfCharacterRepository.save(character);
             })

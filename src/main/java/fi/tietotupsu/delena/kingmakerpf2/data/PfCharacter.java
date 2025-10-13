@@ -96,6 +96,16 @@ public class PfCharacter {
         this.kingmaker = kingmaker;
     }
     
+    private boolean dead;
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
+
     public PfCharacter(String id, String name) {
         super();
         this.id = id;
