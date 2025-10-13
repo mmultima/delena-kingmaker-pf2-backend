@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import fi.tietotupsu.delena.kingmakerpf2.repositories.LootRepository;
 import fi.tietotupsu.delena.kingmakerpf2.repositories.PfCharacterRepository;
 
 @SpringBootTest
@@ -16,6 +17,9 @@ class Kingmakerpf2ApplicationTests {
 	//TODO: Find a way to mock this properly, without deprecation warnings
     @MockBean
     private PfCharacterRepository pfCharacterRepository;
+
+    @MockBean 
+    private LootRepository lootRepository;
 
 	@Test
 	void contextLoads() {
