@@ -73,6 +73,27 @@ public class PfCharacter {
 
     private boolean npc;
 
+    private boolean companion;
+
+    // new field: guest flag
+    private boolean guest;
+
+    public boolean isGuest() {
+        return guest;
+    }
+
+    public void setGuest(boolean guest) {
+        this.guest = guest;
+    }
+    
+    public boolean isCompanion() {
+        return companion;
+    }
+
+    public void setCompanion(boolean companion) {
+        this.companion = companion;
+    }
+
     private List<NpcRelationship> npcRelationships;
     public List<NpcRelationship> getNpcRelationships() {
         return npcRelationships;
