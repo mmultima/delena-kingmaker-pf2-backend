@@ -87,6 +87,7 @@ public class HelloController {
                 character.setImage(updatedCharacter.getImage());
                 character.setDead(updatedCharacter.isDead());
                 character.setNpc(updatedCharacter.isNpc());
+                character.setCompanion(updatedCharacter.isCompanion());
                 // Set other fields as needed
                 return pfCharacterRepository.save(character);
             })

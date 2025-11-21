@@ -73,6 +73,16 @@ public class PfCharacter {
 
     private boolean npc;
 
+    private boolean companion;
+
+    public boolean isCompanion() {
+        return companion;
+    }
+
+    public void setCompanion(boolean companion) {
+        this.companion = companion;
+    }
+
     private List<NpcRelationship> npcRelationships;
     public List<NpcRelationship> getNpcRelationships() {
         return npcRelationships;
